@@ -1,24 +1,405 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vwI-6b-6dx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--منصة طويق-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXS-mf-Rzq">
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="713.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CXS-mf-Rzq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="28d-TW-BZB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CXS-mf-Rzq" secondAttribute="bottom" id="4F5-Ve-uRE"/>
+                            <constraint firstItem="CXS-mf-Rzq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BBh-30-BAW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CXS-mf-Rzq" secondAttribute="trailing" id="KYI-fh-c5N"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="منصة طويق" id="NU2-h7-OM2">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="HfG-hH-IXa">
+                            <color key="tintColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addPressed:" destination="BYZ-38-t0r" id="BaX-6Q-B5e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="CXS-mf-Rzq" id="Grk-8A-JEQ"/>
+                        <segue destination="F4j-4P-lc4" kind="show" identifier="toInfo" id="jEM-lW-tH9"/>
+                        <segue destination="nWr-JW-Al2" kind="show" identifier="toSearch" id="uPE-fj-3pv"/>
+                        <segue destination="G0n-5W-MEO" kind="show" identifier="toAdd" id="teB-1K-G4m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1001" y="76"/>
+        </scene>
+        <!--SearchVC-->
+        <scene sceneID="p2r-ws-vKl">
+            <objects>
+                <viewController id="nWr-JW-Al2" customClass="SearchVC" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="X4C-t8-1yD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableFooterView" contentMode="redraw" id="Mlq-Z1-y81">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="SUd-Ue-8UQ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Mlq-Z1-y81" id="yeK-6h-miC"/>
+                        <outlet property="tableView" destination="X4C-t8-1yD" id="zgf-3b-Tdi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcB-TN-uqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-629"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TrN-bo-9GE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwI-6b-6dx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dBy-aW-miF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hnp-5k-bmx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6BL-QD-7Ue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lqD-AB-fUO">
+            <objects>
+                <viewController id="F4j-4P-lc4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KLX-lL-fq6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YXY-QJ-eqZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QIf-LO-qnu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXa-uC-1Kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="822"/>
+        </scene>
+        <!--إضافة/تعديل فيلم-->
+        <scene sceneID="ge0-qt-lJ0">
+            <objects>
+                <viewController id="G0n-5W-MEO" customClass="AddEditMovie" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="geM-ag-Txa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTS-Z6-hgo">
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="1117.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nF8-4j-XRd">
+                                        <rect key="frame" x="0.0" y="5" width="414" height="1200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="v4J-fh-0cy">
+                                                <rect key="frame" x="16" y="40" width="382" height="177"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="177" id="NZ0-m7-Q30"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="flv-FE-6QY">
+                                                <rect key="frame" x="16" y="277" width="382" height="59"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مرحباً بك في مشروع أفلام طويق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqc-lU-ks1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30.5"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دعنا نساعدك لإضافة/تعديل فيلم !" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al9-rN-NN8">
+                                                        <rect key="frame" x="0.0" y="35.5" width="382" height="23.5"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lJb-w0-CP7">
+                                                <rect key="frame" x="16" y="366" width="382" height="437.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="095-Va-44r">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="إسم الفيلم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-js-DJq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="qNu-85-qfh"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdO-xj-22h">
+                                                                <rect key="frame" x="0.0" y="50" width="382" height="1"/>
+                                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="2kM-hA-noQ"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dp0-9E-GpD">
+                                                        <rect key="frame" x="0.0" y="59" width="382" height="51"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="التقييم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2h-ht-HJ4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="3b8-uV-5t7"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                            </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-xE-bLk">
+                                                                <rect key="frame" x="0.0" y="50" width="382" height="1"/>
+                                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="l6D-BB-cgh"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YON-8a-Kjn">
+                                                        <rect key="frame" x="0.0" y="118" width="382" height="81.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع الفيلم :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWS-Di-XoO" customClass="LblLanguage" customModule="MovieApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="arabic" value="القسم :"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="english" value="Department :"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcz-3M-1LB">
+                                                                <rect key="frame" x="0.0" y="25.5" width="382" height="50"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="GoL-SV-ebB"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="dataSource" destination="G0n-5W-MEO" id="rQp-84-JOy"/>
+                                                                    <outlet property="delegate" destination="G0n-5W-MEO" id="JnG-5E-naW"/>
+                                                                </connections>
+                                                            </pickerView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMu-g7-TeP">
+                                                                <rect key="frame" x="0.0" y="80.5" width="382" height="1"/>
+                                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="aPw-Lz-lNr"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KgL-hG-RFc">
+                                                        <rect key="frame" x="0.0" y="207.5" width="382" height="81.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع الفيلم ٢ (إن وجد)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwP-bd-HOv" customClass="LblLanguage" customModule="MovieApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="arabic" value="القسم :"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="english" value="Department :"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNX-Bg-6KH">
+                                                                <rect key="frame" x="0.0" y="25.5" width="382" height="50"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="HMW-3i-IvW"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <outlet property="dataSource" destination="G0n-5W-MEO" id="7hF-be-JRw"/>
+                                                                    <outlet property="delegate" destination="G0n-5W-MEO" id="1QR-zR-plK"/>
+                                                                </connections>
+                                                            </pickerView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0q-me-otc">
+                                                                <rect key="frame" x="0.0" y="80.5" width="382" height="1"/>
+                                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="66e-fl-aNa"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i01-Al-TpV">
+                                                        <rect key="frame" x="0.0" y="297" width="382" height="81.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوع الفيلم ٣ (إن وجد)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAF-JB-hQe" customClass="LblLanguage" customModule="MovieApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="arabic" value="القسم :"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="english" value="Department :"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <pickerView tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2z-Ei-inV">
+                                                                <rect key="frame" x="0.0" y="25.5" width="382" height="50"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="7iq-HS-0fY"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="dataSource" destination="G0n-5W-MEO" id="nLj-nN-sIu"/>
+                                                                    <outlet property="delegate" destination="G0n-5W-MEO" id="Iyc-hV-6by"/>
+                                                                </connections>
+                                                            </pickerView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO4-5Q-Vhp">
+                                                                <rect key="frame" x="0.0" y="80.5" width="382" height="1"/>
+                                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="tbM-rY-aiH"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zW3-z2-S45">
+                                                        <rect key="frame" x="0.0" y="386.5" width="382" height="51"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رابط صورة الفيلم" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t3R-1W-z0m" customClass="TxtLanguage" customModule="MovieApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="QiZ-P8-GCQ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="arabic" value="ضع السعر الجديد"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="english" value="New Price"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7g-cV-H3t">
+                                                                <rect key="frame" x="0.0" y="50" width="382" height="1"/>
+                                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="fpJ-Md-3GF"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5G-sc-5cE">
+                                                <rect key="frame" x="16" y="833.5" width="382" height="50"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="mle-4o-FlQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="33"/>
+                                                <state key="normal" title="رفع الفيلم">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="uploadPressed:" destination="G0n-5W-MEO" eventType="touchUpInside" id="Ewa-SI-UOp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="flv-FE-6QY" secondAttribute="trailing" constant="16" id="0HL-Jf-Y8b"/>
+                                            <constraint firstItem="v4J-fh-0cy" firstAttribute="top" secondItem="nF8-4j-XRd" secondAttribute="top" constant="40" id="2Nx-9T-2Ap"/>
+                                            <constraint firstAttribute="trailing" secondItem="lJb-w0-CP7" secondAttribute="trailing" constant="16" id="7wv-vC-Vtc"/>
+                                            <constraint firstItem="p5G-sc-5cE" firstAttribute="leading" secondItem="nF8-4j-XRd" secondAttribute="leading" constant="16" id="KJb-bZ-k1q"/>
+                                            <constraint firstAttribute="trailing" secondItem="p5G-sc-5cE" secondAttribute="trailing" constant="16" id="PeU-hu-bRB"/>
+                                            <constraint firstItem="flv-FE-6QY" firstAttribute="leading" secondItem="nF8-4j-XRd" secondAttribute="leading" constant="16" id="Uey-K1-qiq"/>
+                                            <constraint firstItem="p5G-sc-5cE" firstAttribute="top" secondItem="lJb-w0-CP7" secondAttribute="bottom" constant="30" id="VM1-Hg-9kf"/>
+                                            <constraint firstItem="lJb-w0-CP7" firstAttribute="top" secondItem="flv-FE-6QY" secondAttribute="bottom" constant="30" id="VND-Np-2Z4"/>
+                                            <constraint firstItem="flv-FE-6QY" firstAttribute="top" secondItem="v4J-fh-0cy" secondAttribute="bottom" constant="60" id="fbR-8M-nI7"/>
+                                            <constraint firstItem="lJb-w0-CP7" firstAttribute="leading" secondItem="nF8-4j-XRd" secondAttribute="leading" constant="16" id="h4a-C2-QP7"/>
+                                            <constraint firstAttribute="trailing" secondItem="v4J-fh-0cy" secondAttribute="trailing" constant="16" id="kIO-iD-cDy"/>
+                                            <constraint firstAttribute="height" constant="1200" id="sEQ-Ym-jfw"/>
+                                            <constraint firstItem="v4J-fh-0cy" firstAttribute="leading" secondItem="nF8-4j-XRd" secondAttribute="leading" constant="16" id="yT2-V0-K2B"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nF8-4j-XRd" firstAttribute="leading" secondItem="BTS-Z6-hgo" secondAttribute="leading" id="7Hg-ow-ts3"/>
+                                    <constraint firstAttribute="bottom" secondItem="nF8-4j-XRd" secondAttribute="bottom" constant="20" symbolic="YES" id="Xa6-kE-zIE"/>
+                                    <constraint firstAttribute="trailing" secondItem="nF8-4j-XRd" secondAttribute="trailing" id="YSh-cy-ado"/>
+                                    <constraint firstItem="nF8-4j-XRd" firstAttribute="top" secondItem="BTS-Z6-hgo" secondAttribute="top" constant="5" id="iJd-IW-ybH"/>
+                                    <constraint firstItem="nF8-4j-XRd" firstAttribute="centerX" secondItem="BTS-Z6-hgo" secondAttribute="centerX" id="kPf-ry-DUd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J4i-Uq-cFG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BTS-Z6-hgo" firstAttribute="leading" secondItem="J4i-Uq-cFG" secondAttribute="leading" id="34t-5V-ZiM"/>
+                            <constraint firstItem="BTS-Z6-hgo" firstAttribute="trailing" secondItem="J4i-Uq-cFG" secondAttribute="trailing" id="3gS-o2-1Ow"/>
+                            <constraint firstItem="BTS-Z6-hgo" firstAttribute="top" secondItem="J4i-Uq-cFG" secondAttribute="top" id="TNv-l4-flJ"/>
+                            <constraint firstItem="J4i-Uq-cFG" firstAttribute="bottom" secondItem="BTS-Z6-hgo" secondAttribute="bottom" id="uby-kn-Hje"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="إضافة/تعديل فيلم" id="rft-6V-QJ1"/>
+                    <size key="freeformSize" width="414" height="1300"/>
+                    <connections>
+                        <outlet property="movieImgLinkTxt" destination="t3R-1W-z0m" id="loJ-lH-f8u"/>
+                        <outlet property="movieNameTxt" destination="AcZ-js-DJq" id="Cm5-RF-vmn"/>
+                        <outlet property="movieRateTxt" destination="w2h-ht-HJ4" id="7xJ-P4-TlI"/>
+                        <outlet property="movieTypePicker1" destination="Dcz-3M-1LB" id="OC4-k9-qGk"/>
+                        <outlet property="movieTypePicker2" destination="hNX-Bg-6KH" id="XyR-Du-Acz"/>
+                        <outlet property="movieTypePicker3" destination="E2z-Ei-inV" id="0n7-1h-e8c"/>
+                        <outlet property="uploadEditButton" destination="p5G-sc-5cE" id="3Ja-hc-YYp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSf-5w-nzt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="956"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="500" height="375"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
