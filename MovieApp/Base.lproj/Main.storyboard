@@ -80,7 +80,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwI-6b-6dx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dBy-aW-miF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -92,21 +92,70 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--InfoVC-->
         <scene sceneID="lqD-AB-fUO">
             <objects>
-                <viewController id="F4j-4P-lc4" sceneMemberID="viewController">
+                <viewController id="F4j-4P-lc4" customClass="InfoVC" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KLX-lL-fq6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="I6b-pT-7yR">
+                                <rect key="frame" x="8" y="156.5" width="398" height="605.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inside Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-up-Nx0">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="S6V-E6-Ld5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="FfM-rD-C2x">
+                                        <rect key="frame" x="0.0" y="61" width="398" height="462.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inside Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tdk-8Q-La3">
+                                        <rect key="frame" x="0.0" y="534.5" width="398" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1mY-4Y-dUf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-Nt-qz2">
+                                        <rect key="frame" x="0.0" y="575.5" width="398" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="G6y-Gf-FSz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YXY-QJ-eqZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YXY-QJ-eqZ" firstAttribute="trailing" secondItem="I6b-pT-7yR" secondAttribute="trailing" constant="8" id="Hkl-pU-ISs"/>
+                            <constraint firstItem="I6b-pT-7yR" firstAttribute="leading" secondItem="YXY-QJ-eqZ" secondAttribute="leading" constant="8" id="c03-Kp-2EB"/>
+                            <constraint firstItem="I6b-pT-7yR" firstAttribute="top" secondItem="YXY-QJ-eqZ" secondAttribute="top" constant="8" id="mIv-iR-wty"/>
+                            <constraint firstItem="YXY-QJ-eqZ" firstAttribute="bottom" secondItem="I6b-pT-7yR" secondAttribute="bottom" constant="100" id="uDo-Yd-G0Q"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QIf-LO-qnu"/>
+                    <connections>
+                        <outlet property="movieImg" destination="FfM-rD-C2x" id="rZa-bl-Dxr"/>
+                        <outlet property="movieName" destination="FDA-up-Nx0" id="A86-eD-CUw"/>
+                        <outlet property="movieRate" destination="Lh2-Nt-qz2" id="Jx9-HT-Yqk"/>
+                        <outlet property="movieType" destination="tdk-8Q-La3" id="vhg-Gz-2gb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yXa-uC-1Kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="822"/>
+            <point key="canvasLocation" x="1000.0000000000001" y="821.65178571428567"/>
         </scene>
         <!--إضافة/تعديل فيلم-->
         <scene sceneID="ge0-qt-lJ0">
@@ -122,7 +171,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nF8-4j-XRd">
                                         <rect key="frame" x="0.0" y="5" width="414" height="1200"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="v4J-fh-0cy">
+                                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="v4J-fh-0cy">
                                                 <rect key="frame" x="16" y="40" width="382" height="177"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="177" id="NZ0-m7-Q30"/>
@@ -245,6 +294,11 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="HMW-3i-IvW"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <outlet property="dataSource" destination="G0n-5W-MEO" id="7hF-be-JRw"/>
                                                                     <outlet property="delegate" destination="G0n-5W-MEO" id="1QR-zR-plK"/>

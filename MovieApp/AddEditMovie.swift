@@ -20,16 +20,19 @@ class AddEditMovie : UIViewController {
     @IBOutlet weak var movieImgLinkTxt: UITextField!
     @IBOutlet weak var uploadEditButton: UIButton!
     
+    
     //variables:
     let realm = try! Realm()
     let types1 = [" ","Action","Comedy","Biography","Thriller","romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
     let types2 = [" ","Action","Comedy","Biography","Thriller","romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
     let types3 = [" ","Action","Comedy","Biography","Thriller","romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
     let newMovie = MovieObject()
+    var selectedMovie : MovieObject?
+//    var isNew = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        editingMode()
     }
     
     @IBAction func uploadPressed(_ sender: Any) {
@@ -40,7 +43,11 @@ class AddEditMovie : UIViewController {
         save(movie: newMovie)
         navigationController?.popToRootViewController(animated: true)
         
-        
+        if let edited = selectedMovie {
+            delete(movie: edited)
+            print("تم حذف الفيلم القديم")
+        }
+        NotificationCenter.default.post(name: NSNotification.Name("reloadData"), object: nil, userInfo: nil)
     }
     
     func save(movie: MovieObject) {
@@ -51,8 +58,28 @@ class AddEditMovie : UIViewController {
         } catch {
             print("Error saving movie \(error)")
         }
-        
     }
+    
+    func delete(movie: MovieObject) {
+        do {
+            try realm.write {
+                realm.delete(movie)
+            }
+        } catch {
+            print("Error saving movie \(error)")
+        }
+    }
+    
+    func editingMode() {
+        if let edited = selectedMovie {
+            movieNameTxt.text = selectedMovie?.movieName
+            movieRateTxt.text = String(selectedMovie?.movieRate ?? 0.0)
+            uploadEditButton.setTitle("تعديل", for: .normal)
+            uploadEditButton.backgroundColor = #colorLiteral(red: 0, green: 0.5452948213, blue: 0.5925067663, alpha: 1)
+            movieImgLinkTxt.text = selectedMovie?.movieImgLink
+              }
+            
+        }
 }
 
 extension AddEditMovie : UIPickerViewDataSource , UIPickerViewDelegate {

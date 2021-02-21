@@ -22,31 +22,42 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //    var movies : [MovieObject] = []
     var movies : Results<MovieObject>?
     let realm = try! Realm()
+    var selectedMovie : MovieObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadCategories()
+        loadMovies()
         tableView.separatorStyle = .none
         tableView.reloadData()
-        
-        
-//        movies = [ MovieObject(movieName: "A Beautiful Mind", movieRate: 8.2, movieType1: "Biography", movieType2: ", Drama", movieType3: " ", movieImgLink: "https://amblin.com/wp-content/uploads/2018/09/beautifulmind_2001_photo_1920x1080-1_hero-1920x1080.jpg"),
-//                   MovieObject(movieName: "Finding Nemo", movieRate: 8.1, movieType1: "Animation", movieType2: ", Adventure", movieType3: ", Comedy", movieImgLink: "https://miro.medium.com/max/1088/0*N-d5irFhX--0VA1y" )
-                   //,
-//                   MovieObject(movieName: "When a Stranger Calls", movieRate: 5.1, movieType1: "Horror", movieType2: ", Thriller", movieType3: " ", movieImgName: UIImage(named: "when")!),
-//                   MovieObject(movieName: "the pursuit of happyness", movieRate: 8.0, movieType1: "Biography", movieType2: ", Drama", movieType3: "", movieImgName: UIImage(named: "pursuit")!),
-//                   MovieObject(movieName: "Inside Out", movieRate: 8.2, movieType1: "Animation", movieType2: ", Adventure", movieType3: ", Comedy", movieImgName: UIImage(named: "inside")!),
-//                   MovieObject(movieName: "Inception", movieRate: 9, movieType1: "Drama", movieType2: ", Action", movieType3: ", Adventure", movieImgName: UIImage(named: "inception")!)
-//        ]
-        }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name("reloadData"), object: nil)
+
+
+    }
+    
+
+    @objc func reloadData() {
+        movies = nil
+        tableView.reloadData()
+        loadMovies()
+
+    }
+
     
     @IBAction func addPressed(_ sender: Any) {
         performSegue(withIdentifier: "toAdd", sender: self)
     }
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? InfoVC {
+            destinationVC.movieObj = selectedMovie!
+        }
+        if let destinationVC2 = segue.destination as? AddEditMovie {
+            destinationVC2.selectedMovie = selectedMovie
+        }
+    }
     
    
     //MARK: - Delete Data From Swipe
@@ -66,7 +77,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     //MARK: - Data Manipulation Methods
 
-    func loadCategories() {
+    func loadMovies() {
         movies  = realm.objects(MovieObject.self)
         tableView.reloadData()
         
@@ -87,11 +98,18 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.updateModel(at: indexPath)
             }
         let edit = UITableViewRowAction(style: .normal, title: "تعديل") { (action, indexPath) in
-                       self.performSegue(withIdentifier: "toAdd", sender: nil)
+            self.selectedMovie = self.movies![indexPath.row]
+            self.performSegue(withIdentifier: "toAdd", sender: nil)
+            
                    }
         edit.backgroundColor = #colorLiteral(red: 0, green: 0.5452948213, blue: 0.5925067663, alpha: 1)
         
         return [delete,edit]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedMovie = movies![indexPath.row]
+        performSegue(withIdentifier: "toInfo", sender: self)
     }
     
     //MARK: - الاذونات للتعامل مع مكتبة التابل فيو
