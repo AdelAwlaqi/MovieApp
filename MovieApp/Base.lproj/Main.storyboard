@@ -32,12 +32,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="منصة طويق" id="NU2-h7-OM2">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="HfG-hH-IXa">
-                            <color key="tintColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="addPressed:" destination="BYZ-38-t0r" id="BaX-6Q-B5e"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="add" id="HfG-hH-IXa">
+                                <color key="tintColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="addPressed:" destination="BYZ-38-t0r" id="BaX-6Q-B5e"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="search" id="K7f-XD-jaZ">
+                                <color key="tintColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="searchPressed:" destination="BYZ-38-t0r" id="j5k-w4-9N6"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="CXS-mf-Rzq" id="Grk-8A-JEQ"/>
@@ -58,15 +66,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableFooterView" contentMode="redraw" id="Mlq-Z1-y81">
+                        <searchBar key="tableHeaderView" clipsSubviews="YES" contentMode="redraw" placeholder="ابحث بإسم الفيلم" id="eLy-hn-REr">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="nWr-JW-Al2" id="jEv-bx-lec"/>
+                            </connections>
                         </searchBar>
+                        <connections>
+                            <outlet property="dataSource" destination="nWr-JW-Al2" id="cHy-b7-QGd"/>
+                            <outlet property="delegate" destination="nWr-JW-Al2" id="RBw-0c-qaV"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="SUd-Ue-8UQ"/>
                     <connections>
-                        <outlet property="searchBar" destination="Mlq-Z1-y81" id="yeK-6h-miC"/>
                         <outlet property="tableView" destination="X4C-t8-1yD" id="zgf-3b-Tdi"/>
                     </connections>
                 </viewController>

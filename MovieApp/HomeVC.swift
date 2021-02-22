@@ -49,6 +49,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "toAdd", sender: self)
     }
     
+    @IBAction func searchPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toSearch", sender: self)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? InfoVC {
