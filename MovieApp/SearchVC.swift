@@ -9,12 +9,36 @@ import UIKit
 import RealmSwift
 
 
-class SearchVC : UIViewController , UITableViewDelegate , UITableViewDataSource {
+class SearchVC : UIViewController , UITableViewDelegate , UITableViewDataSource, SelectTypeDelegate, SelectRateDelegate {
+    
+    func selectedRate(SelectedRate: String) {
+        selectedRate = Float(SelectedRate)
+        print("\(selectedRate)Im SearchVC //////")
+        loadMovies()
+        movies = movies?.filter("movieRate == %d", selectedRate)
+        print(movies?.count)
+        
+        tableView.reloadData()
+    }
+    
+    func selectedType(type: String) {
+        selectedType = type
+        let predict = NSPredicate.init(format: "movieType1 == %@", selectedType as! CVarArg)
+        let predict2 = NSPredicate.init(format: "movieType2 == %@", selectedType as! CVarArg)
+        let predict3 = NSPredicate.init(format: "movieType3 == %@", selectedType as! CVarArg)
+        let query = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.or, subpredicates: [predict,predict2,predict3])
+        movies = realm.objects(MovieObject.self).filter(query)
+        tableView.reloadData()
+    }
+    
     
     // variables:
     var movieObj : MovieObject?
     var movies : Results<MovieObject>?
     let realm = try! Realm()
+    @IBOutlet weak var typeButton: UIBarButtonItem!
+    var selectedType : String?
+    var selectedRate : Float?
     
     
     // outlets:
@@ -28,10 +52,10 @@ class SearchVC : UIViewController , UITableViewDelegate , UITableViewDataSource 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        searchBar.delegate = self
         loadMovies()
         tableView.separatorStyle = .none
         tableView.reloadData()
+
              }
     
     
@@ -52,9 +76,32 @@ class SearchVC : UIViewController , UITableViewDelegate , UITableViewDataSource 
         tableView.reloadData()
     }
     
+    
+    @IBAction func btPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toType", sender: self)
+    }
+    
+    
+    @IBAction func ratePressed(_ sender: Any) {
+        performSegue(withIdentifier: "toRate", sender: self)
+    }
+    
+    
+//    func changetitle() {
+//        let item = self.navigationItem.rightBarButtonItem!
+//        let button = item.customView as! UIButton
+//        button.setTitle("البحث بنوع الفيلم", for: .normal)
+//    }
 
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? SearchType {
+            destinationVC.delegate = self
+        }
+        if let destinationVC2 = segue.destination as? SearchRate {
+            destinationVC2.delegate = self
+            print("Im Delegate")
+        }
+    }
 
 }
 extension SearchVC : UISearchBarDelegate {
@@ -80,4 +127,5 @@ extension SearchVC : UISearchBarDelegate {
             tableView.reloadData()
         }
     }
+    
 }

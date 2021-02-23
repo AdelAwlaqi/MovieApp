@@ -58,6 +58,252 @@
             </objects>
             <point key="canvasLocation" x="1001" y="76"/>
         </scene>
+        <!--Search Type-->
+        <scene sceneID="5p3-YD-DxB">
+            <objects>
+                <viewController id="Ofw-EF-V5b" customClass="SearchType" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="efL-Rh-nkd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="bX2-sI-3sf">
+                                <rect key="frame" x="8" y="60" width="398" height="434"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JbL-w0-fW0">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRt-aD-lc3">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Action">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="3ya-9H-iPv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ls-OU-jze">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Comedy">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="bUM-DN-4ef"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fZJ-lY-2IQ">
+                                        <rect key="frame" x="0.0" y="77" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nb5-uP-9ro">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Biography">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="0YW-ne-pcJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-dl-3hF">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Thriller">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="nrd-0R-hXX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m5G-2D-yll">
+                                        <rect key="frame" x="0.0" y="154" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-Hl-smA">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Romantic">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="9Wo-gX-Jv1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOT-bs-OGM">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Adventure">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="dSK-9v-H9K"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-4r-e63">
+                                        <rect key="frame" x="0.0" y="231" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U88-w0-Ah6">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Musical">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="4f5-HC-Crg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-rt-MbU">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Drama">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="dfK-yN-Duk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OcA-22-Ilu">
+                                        <rect key="frame" x="0.0" y="308" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XC-IT-YOe">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Historical">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="P71-4m-pYh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQT-rJ-mT8">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Real Life">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="x7D-aO-Ezh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hrE-25-s29">
+                                        <rect key="frame" x="0.0" y="385" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Od-TT-6w0">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="War">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="VjW-HL-a7e"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yD-jU-H5S">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="Horror">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="xDt-wN-7Lv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" clipsSubviews="YES" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNZ-iS-rja">
+                                <rect key="frame" x="8" y="510" width="398" height="49"/>
+                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="nrW-bA-Ym8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                <state key="normal" title="Sci-Fi">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="typePressed:" destination="Ofw-EF-V5b" eventType="touchUpInside" id="uqg-nD-fU6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i1L-Yi-8dM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bX2-sI-3sf" firstAttribute="leading" secondItem="i1L-Yi-8dM" secondAttribute="leading" constant="8" id="4Eo-5G-LC6"/>
+                            <constraint firstItem="LNZ-iS-rja" firstAttribute="top" secondItem="bX2-sI-3sf" secondAttribute="bottom" constant="16" id="9Or-oq-qAY"/>
+                            <constraint firstItem="i1L-Yi-8dM" firstAttribute="trailing" secondItem="LNZ-iS-rja" secondAttribute="trailing" constant="8" id="JKt-zs-zqQ"/>
+                            <constraint firstItem="bX2-sI-3sf" firstAttribute="top" secondItem="i1L-Yi-8dM" secondAttribute="top" constant="16" id="PRG-03-WmE"/>
+                            <constraint firstItem="LNZ-iS-rja" firstAttribute="leading" secondItem="i1L-Yi-8dM" secondAttribute="leading" constant="8" id="r0h-0y-u27"/>
+                            <constraint firstItem="i1L-Yi-8dM" firstAttribute="trailing" secondItem="bX2-sI-3sf" secondAttribute="trailing" constant="8" id="zwl-Us-oOS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oHT-Bw-VQM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mq1-3B-MQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010.144927536232" y="-1375.4464285714284"/>
+        </scene>
         <!--SearchVC-->
         <scene sceneID="p2r-ws-vKl">
             <objects>
@@ -79,9 +325,24 @@
                             <outlet property="delegate" destination="nWr-JW-Al2" id="RBw-0c-qaV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="SUd-Ue-8UQ"/>
+                    <navigationItem key="navigationItem" id="SUd-Ue-8UQ">
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="search" id="AQj-r3-hNA">
+                                <connections>
+                                    <action selector="btPressed:" destination="nWr-JW-Al2" id="Acs-aS-16M"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="search" id="Rb0-tY-AJQ">
+                                <connections>
+                                    <action selector="ratePressed:" destination="nWr-JW-Al2" id="XdR-Gf-ojs"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="X4C-t8-1yD" id="zgf-3b-Tdi"/>
+                        <segue destination="Ofw-EF-V5b" kind="presentation" identifier="toType" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="y8M-yN-d9d"/>
+                        <segue destination="Lhi-78-dbi" kind="presentation" identifier="toRate" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="zmU-ya-wKy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcB-TN-uqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -94,7 +355,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwI-6b-6dx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dBy-aW-miF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -462,6 +723,199 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSf-5w-nzt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="64" y="956"/>
+        </scene>
+        <!--Search Rate-->
+        <scene sceneID="AIr-Mh-zkL">
+            <objects>
+                <viewController id="Lhi-78-dbi" customClass="SearchRate" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oiu-gM-T8g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="lNI-uq-9Cs">
+                                <rect key="frame" x="8" y="60" width="398" height="357"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="S7J-ue-4G5">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8W-AM-fuQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="1.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="HIX-c9-iZm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws2-gj-gO7">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="2.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="IOk-GO-GWY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cb9-zy-vlb">
+                                        <rect key="frame" x="0.0" y="77" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-OZ-Q0c">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="3.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="MXq-PB-qxw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-gM-8uR">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="4.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="mvx-Se-9rK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AUC-mG-QWB">
+                                        <rect key="frame" x="0.0" y="154" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBm-jp-clX">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="5.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="CMw-QS-HQS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnM-5K-BiE">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="6.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="i3n-9h-T3G"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="N7Y-q0-yes">
+                                        <rect key="frame" x="0.0" y="231" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKR-a1-U0y">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="7.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="UGM-qE-OQa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8t-mU-Msj">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="8.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="TUc-sj-dGf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fxt-Rs-DcL">
+                                        <rect key="frame" x="0.0" y="308" width="398" height="49"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbV-mw-l91">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="9.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="9py-gX-qtn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yws-7T-Uxs">
+                                                <rect key="frame" x="209" y="0.0" width="189" height="49"/>
+                                                <color key="backgroundColor" red="0.0" green="0.54529482129999995" blue="0.59250676629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
+                                                <size key="titleShadowOffset" width="-2" height="-3"/>
+                                                <state key="normal" title="10.0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="typePressed:" destination="Lhi-78-dbi" eventType="touchUpInside" id="1tH-0I-NGk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mZv-FO-C1E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lNI-uq-9Cs" firstAttribute="top" secondItem="mZv-FO-C1E" secondAttribute="top" constant="16" id="KjR-sG-eda"/>
+                            <constraint firstItem="mZv-FO-C1E" firstAttribute="trailing" secondItem="lNI-uq-9Cs" secondAttribute="trailing" constant="8" id="Vzh-yE-IxV"/>
+                            <constraint firstItem="lNI-uq-9Cs" firstAttribute="leading" secondItem="mZv-FO-C1E" secondAttribute="leading" constant="8" id="pef-FQ-DHO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7vG-Pg-ZzC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZb-3r-60j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258" y="-1479"/>
         </scene>
     </scenes>
     <resources>

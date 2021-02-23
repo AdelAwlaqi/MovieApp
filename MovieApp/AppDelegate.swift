@@ -18,15 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         print(Realm.Configuration.defaultConfiguration.fileURL as Any)
-     
-        
-//        let data = MovieObject()
-//        data.movieName = "Adel"
-//        data.movieImgLink = "  "
-//        data.movieRate = 5.0
-//        data.movieType1 = "1"
-//        data.movieType2 = "2"
-//        data.movieType3 = "3"
+  
         
         do {
            let _ = try Realm()

@@ -24,24 +24,20 @@ class MovieCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        movieLbl.text = movieObj?.movieName
-//        movieImg.image = movieObj?.movieImgName
-//        movieRateLbl.text = String(movieObj?.movieRate ?? 5.0)
-//        movieTypeLbl.text = "\(movieObj?.movieType1) \(movieObj?.movieType2) \(movieObj?.movieType3)"
-        
     }
 
     func lblBgChanger(rate : Float) {
         if rate <= 5 && rate > 3 {
             movieRateLbl.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
             movieRateLbl.textColor = UIColor.black
-        } else if rate < 3 {
+        } else if rate <= 3 {
             movieRateLbl.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.9515245783, blue: 0, alpha: 1)
             movieRateLbl.textColor = UIColor.black
         }else if rate > 5 && rate < 8 {
             movieRateLbl.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         } else {
             movieRateLbl.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+            movieRateLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
     }
     

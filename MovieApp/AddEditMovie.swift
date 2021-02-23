@@ -23,12 +23,12 @@ class AddEditMovie : UIViewController {
     
     //variables:
     let realm = try! Realm()
-    let types1 = [" ","Action","Comedy","Biography","Thriller","romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
-    let types2 = [" ","Action","Comedy","Biography","Thriller","romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
-    let types3 = [" ","Action","Comedy","Biography","Thriller","romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
+    let types1 = [" ","Action","Comedy","Biography","Thriller","Romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
+    let types2 = [" ","Action","Comedy","Biography","Thriller","Romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
+    let types3 = [" ","Action","Comedy","Biography","Thriller","Romantic","Adventure","Musical","Drama","Historical","Real Life","War","Horror","Sci-Fi"]
     let newMovie = MovieObject()
     var selectedMovie : MovieObject?
-//    var isNew = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,6 @@ class AddEditMovie : UIViewController {
         
         if let edited = selectedMovie {
             delete(movie: edited)
-            print("تم حذف الفيلم القديم")
         }
         NotificationCenter.default.post(name: NSNotification.Name("reloadData"), object: nil, userInfo: nil)
     }

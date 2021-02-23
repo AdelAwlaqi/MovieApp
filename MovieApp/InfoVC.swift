@@ -34,7 +34,6 @@ class InfoVC : UIViewController {
         movieName.text = movieObj.movieName
         movieType.text = "\(movieObj.movieType1) \(movieObj.movieType2) \(movieObj.movieType3)"
         movieRate.text = movieObj.movieRate.description
-        print("//////////////////////////////////////////////\(movieRate.text)")
         if let url = URL(string: movieObj.movieImgLink){
             let placeholder = UIImage(named: "placeholder")
             let options : KingfisherOptionsInfo = [.transition(.fade(0.3))]

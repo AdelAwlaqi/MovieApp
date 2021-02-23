@@ -19,7 +19,9 @@
 		DD75605925DDD24D00B0F701 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD75605725DDD24D00B0F701 /* MovieCell.xib */; };
 		DD75607D25DDD7C700B0F701 /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75607C25DDD7C700B0F701 /* MovieObject.swift */; };
 		DD92E30625E1C00D00FE9DD1 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92E30525E1C00D00FE9DD1 /* InfoVC.swift */; };
+		DD962EE825E4380A00B39CF1 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD962EE725E4380A00B39CF1 /* SearchType.swift */; };
 		DDA5CD1325E052940007FC05 /* AddEditMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA5CD1225E052940007FC05 /* AddEditMovie.swift */; };
+		DDCD527425E4A53E001FF5A9 /* SearchRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD527325E4A53E001FF5A9 /* SearchRate.swift */; };
 		F35CE1E68227ACDF743D2861 /* Pods_MovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D446E1CD5385D50D2FFCF3E7 /* Pods_MovieApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +43,9 @@
 		DD75605725DDD24D00B0F701 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		DD75607C25DDD7C700B0F701 /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
 		DD92E30525E1C00D00FE9DD1 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		DD962EE725E4380A00B39CF1 /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		DDA5CD1225E052940007FC05 /* AddEditMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditMovie.swift; sourceTree = "<group>"; };
+		DDCD527325E4A53E001FF5A9 /* SearchRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				DD75604425DDD1C100B0F701 /* Main.storyboard */,
 				DD92E30525E1C00D00FE9DD1 /* InfoVC.swift */,
 				DDA5CD1225E052940007FC05 /* AddEditMovie.swift */,
+				DD962EE725E4380A00B39CF1 /* SearchType.swift */,
+				DDCD527325E4A53E001FF5A9 /* SearchRate.swift */,
 				DD6FB0A425DE9F610059C8E2 /* SearchVC.swift */,
 				DD75605325DDD22100B0F701 /* HomeVC.swift */,
 				DD75607F25DDE15200B0F701 /* Xibs */,
@@ -239,9 +245,11 @@
 				DD75605425DDD22100B0F701 /* HomeVC.swift in Sources */,
 				DD75603F25DDD1C100B0F701 /* AppDelegate.swift in Sources */,
 				DD75607D25DDD7C700B0F701 /* MovieObject.swift in Sources */,
+				DDCD527425E4A53E001FF5A9 /* SearchRate.swift in Sources */,
 				DD92E30625E1C00D00FE9DD1 /* InfoVC.swift in Sources */,
 				DDA5CD1325E052940007FC05 /* AddEditMovie.swift in Sources */,
 				DD75605825DDD24D00B0F701 /* MovieCell.swift in Sources */,
+				DD962EE825E4380A00B39CF1 /* SearchType.swift in Sources */,
 				DD6FB0CD25DEA16F0059C8E2 /* coreData.xcdatamodeld in Sources */,
 				DD75604125DDD1C100B0F701 /* SceneDelegate.swift in Sources */,
 			);

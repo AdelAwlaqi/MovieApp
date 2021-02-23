@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import RealmSwift
+
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView! {
